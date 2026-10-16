@@ -4,7 +4,7 @@ O HDManager mostra para onde foi o espaço do seu disco: quais pastas e arquivos
 
 ## Instalar
 
-1. Baixe o arquivo `HDManager_<versão>_x64-setup.exe` no link que eu te mandei (página de releases do projeto no GitHub).
+1. Baixe o arquivo `HDManager_<versão>_x64-setup.exe` da versão mais nova em https://github.com/abreusleo/HDManager-releases/releases/latest (em **Assets**).
 2. O Windows pode mostrar **"O Windows protegeu o computador"** (SmartScreen). Isso acontece porque o app não tem assinatura digital paga. Clique em **Mais informações** e depois em **Executar assim mesmo**.
 3. Aceite o pedido de permissão de administrador. Ele aparece na instalação e **toda vez que você abrir o HDManager** — não é só na primeira vez. O app precisa dele para ler o índice do disco (a MFT do NTFS) — é o mesmo método do WizTree e do Everything, e é o que faz a leitura levar segundos em vez de minutos.
    - Se você clicar em **Não**, o Windows simplesmente não abre o app. É o comportamento esperado; abra de novo e aceite.
