@@ -23,6 +23,7 @@ O HDManager mostra para onde foi o espaço do seu disco: quais pastas e arquivos
 - **Histórico:** o que cresceu nas últimas 24 h, 7 dias, 30 dias ou desde o início — por categoria e por pasta, com o gráfico do espaço usado. O HDManager guarda uma foto do disco a cada 6 horas enquanto está aberto, então o histórico começa no dia em que você instala. O Painel também mostra "+X GB nos últimos 7 dias".
 - **Aviso de pouco espaço:** quando um disco fica com menos de 10% livre (ajuste em Configurações; 0 desliga), o Windows mostra uma notificação, no máximo uma vez por dia — nunca durante um jogo.
 - **Exportar CSV:** as listas (busca, filtros, Programas e Insights) têm **Exportar CSV**, que abre no Excel.
+- **Voltar e avançar:** os botões laterais do mouse (ou **Alt + ←** e **Alt + →**) voltam e avançam como no navegador, entre telas e entre as pastas do Explorador.
 - **● ao vivo:** o índice se atualiza sozinho enquanto você usa o PC. **● estático** quer dizer que o disco não permite isso (pendrive, rede) — use **Reescanear** quando quiser atualizar.
 
 ## Jogos e anti-cheat
