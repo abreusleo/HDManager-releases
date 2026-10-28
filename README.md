@@ -1,17 +1,20 @@
-# HDManager — como instalar e usar
+# PCManager — como instalar e usar
 
-O HDManager mostra para onde foi o espaço do seu disco: quais pastas e arquivos ocupam mais, o que cada pasta é ("o que é isso?") e o que provavelmente sobrou de programas desinstalados, projetos parados e jogos que você não abre há meses. **Ele não apaga nada por conta própria**: na tela **Limpeza** você escolhe quais caches e temporários mandar para a Lixeira (ou apagar de vez), na tela **Duplicados** quais cópias repetidas mandar para a Lixeira, na tela **Programas** quais jogos e programas compactar, e para desinstalar um programa ou jogo ele abre o desinstalador oficial.
+> Até a versão 0.1.4 o app se chamava **HDManager**. Quem já tinha instalado recebe o nome novo pela atualização, e o instalador remove a instalação antiga sozinho (o histórico e as configurações continuam).
+
+O PCManager mostra o seu PC por partes: **Disco**, **Programas** e **Rede**. No disco, mostra para onde foi o espaço: quais pastas e arquivos ocupam mais, o que cada pasta é ("o que é isso?") e o que provavelmente sobrou de programas desinstalados, projetos parados e jogos que você não abre há meses. **Ele não apaga nada por conta própria**: na tela **Limpeza** você escolhe quais caches e temporários mandar para a Lixeira (ou apagar de vez), na tela **Duplicados** quais cópias repetidas mandar para a Lixeira, na tela **Programas** quais jogos e programas compactar, e para desinstalar um programa ou jogo ele abre o desinstalador oficial.
 
 ## Instalar
 
-1. Baixe o arquivo `HDManager_<versão>_x64-setup.exe` da versão mais nova em https://github.com/abreusleo/HDManager-releases/releases/latest (em **Assets**).
+1. Baixe o arquivo `PCManager_<versão>_x64-setup.exe` da versão mais nova em https://github.com/abreusleo/HDManager-releases/releases/latest (em **Assets**).
 2. O Windows pode mostrar **"O Windows protegeu o computador"** (SmartScreen). Isso acontece porque o app não tem assinatura digital paga. Clique em **Mais informações** e depois em **Executar assim mesmo**.
-3. Aceite o pedido de permissão de administrador. Ele aparece na instalação e **toda vez que você abrir o HDManager** — não é só na primeira vez. O app precisa dele para ler o índice do disco (a MFT do NTFS) — é o mesmo método do WizTree e do Everything, e é o que faz a leitura levar segundos em vez de minutos.
+3. Aceite o pedido de permissão de administrador. Ele aparece na instalação e **toda vez que você abrir o PCManager** — não é só na primeira vez. O app precisa dele para ler o índice do disco (a MFT do NTFS) — é o mesmo método do WizTree e do Everything, e é o que faz a leitura levar segundos em vez de minutos.
    - Se você clicar em **Não**, o Windows simplesmente não abre o app. É o comportamento esperado; abra de novo e aceite.
 4. Se o seu Windows não tiver o WebView2 (componente da Microsoft usado pela janela do app), o instalador baixa sozinho.
 
 ## Usar
 
+- **Áreas:** no topo da janela, escolha qual parte do PC ver: **Disco** (Painel, Explorador, Insights, Limpeza, Duplicados, Histórico, Saúde e Buscar), **Programas** (Instalados, Inicialização e Tempo de uso) ou **Rede**. A barra lateral mostra as telas da área escolhida, e trocar de área volta para a última tela que você abriu nela.
 - **Primeira vez:** escolha um disco. Num SSD a leitura leva poucos segundos; num HD ou pendrive, mais.
 - **Painel:** a rosca mostra o uso por categoria (Jogos, Apps, Dev, Sistema, Cache…). Os cards mostram órfãos, arquivos esquecidos, lixo de desenvolvimento, jogos não jogados e itens do sistema. Clique num card para ver os itens. O card **Lixeira** mostra quanto ela ocupa e tem **Esvaziar** (o Windows pede a confirmação).
 - **Explorador:** árvore à esquerda, visual à direita (Treemap, Sunburst, Por categoria ou **Por tipo**, que soma por extensão: `.mp4`, `.iso`… — clique numa para buscar no disco). Clique duplo entra na pasta; Backspace volta. A faixa de baixo explica o item selecionado e tem **Abrir no Explorer** e **Copiar caminho**; em itens do sistema (memória virtual, pontos de restauração…) também tem o botão que abre a tela certa do Windows.
@@ -20,7 +23,11 @@ O HDManager mostra para onde foi o espaço do seu disco: quais pastas e arquivos
 - **Limpeza:** temporários, cache de navegadores e de apps (marcados por padrão), cache de shaders, caches de pacotes de dev e lixo de dev de projetos parados (opcionais). Escolha mandar para a **Lixeira** (dá para desfazer; o espaço volta ao esvaziar a Lixeira) ou **apagar de vez**. Arquivos em uso são pulados e listados. Nada é limpo durante um jogo.
 - **Duplicados:** acha arquivos com o mesmo conteúdo nas suas pastas (ou no disco todo), sem olhar jogos, programas, o Windows e o AppData. Compara primeiro o tamanho, depois o começo e o fim, e só lê por inteiro o que empatou; roda em segundo plano, pausa sozinha durante um jogo e não baixa arquivos do OneDrive que estão só na nuvem. Você marca as cópias (ou usa "Manter a mais antiga"/"Manter a mais recente"); sempre fica pelo menos uma, e elas vão para a **Lixeira**.
 - **Compactar (tela Programas):** jogos e programas grandes ganham o botão **Compactar**, que usa a compressão do próprio Windows (a mesma do `compact /EXE:XPRESS8K`). É transparente: o jogo abre e roda igual, e o conteúdo dos arquivos não muda. Antes, o app mostra quanto deve liberar (costuma ser de 20% a 50%). Roda em segundo plano, pausa se um jogo abrir e dá para cancelar. Jogos com anti-cheat (Easy Anti-Cheat, BattlEye, Vanguard) pedem uma confirmação a mais. Depois de uma atualização do jogo, os arquivos novos chegam sem compactar: o botão vira **Compactar o resto**. **Descompactar** desfaz tudo.
-- **Histórico:** o que cresceu nas últimas 24 h, 7 dias, 30 dias ou desde o início — por categoria e por pasta, com o gráfico do espaço usado. O HDManager guarda uma foto do disco a cada 6 horas enquanto está aberto, então o histórico começa no dia em que você instala. O Painel também mostra "+X GB nos últimos 7 dias".
+- **Tempo de uso:** quanto tempo cada programa e jogo ficou na frente, por dia e por hora. Vem desligado: em **Tempo de uso → Ativar**, um contador pequeno passa a iniciar com o Windows (sem janela e sem administrador) e anota a cada 5 s qual programa está na frente. Para de contar depois de 5 min sem mexer, menos em jogo ou vídeo em tela cheia. Guarda só o nome do programa, nunca o título da janela, e tudo fica no seu PC. Dá para pausar, deixar de registrar um programa, apagar o histórico ou desativar. Não abre o processo de nenhum jogo.
+- **Rede:** quanto cada programa e jogo baixou e enviou pela internet hoje e nos últimos 7, 30 ou 60 dias, com as barras por dia. Os números são os que o próprio Windows já guarda (os mesmos de Configurações → Rede → Uso de dados), então a tela já abre com o histórico dos últimos 60 dias. Não precisa ativar nada, nada fica rodando e nenhum programa é aberto.
+- **Inicialização (tela Programas):** o que abre junto com o Windows (registro, pasta Inicializar e tarefas agendadas), se está ativo, o impacto no último boot (o mesmo cálculo do Gerenciador de Tarefas) e os itens que apontam para programas que não existem mais. Só mostra: para ligar ou desligar, o botão abre a tela do Windows.
+- **Saúde dos discos:** clique em **Verificar agora** e o app lê o que cada disco registra sobre a própria saúde (temperatura, vida útil do SSD, setores com defeito do HD, horas ligado) e a opinião do Windows. Cada disco ganha **Bom**, **Atenção** ("faça backup e acompanhe") ou **Ruim** ("faça backup agora"), e a tela mostra o que piorou desde a verificação anterior. Só lê quando você clica, nunca durante um jogo, e não grava nada no disco. HDs externos USB muitas vezes não informam a saúde: aparece "Sem dados".
+- **Histórico:** o que cresceu nas últimas 24 h, 7 dias, 30 dias ou desde o início — por categoria e por pasta, com o gráfico do espaço usado. O PCManager guarda uma foto do disco a cada 6 horas enquanto está aberto, então o histórico começa no dia em que você instala. O Painel também mostra "+X GB nos últimos 7 dias".
 - **Aviso de pouco espaço:** quando um disco fica com menos de 10% livre (ajuste em Configurações; 0 desliga), o Windows mostra uma notificação, no máximo uma vez por dia — nunca durante um jogo.
 - **Exportar CSV:** as listas (busca, filtros, Programas e Insights) têm **Exportar CSV**, que abre no Excel.
 - **Voltar e avançar:** os botões laterais do mouse (ou **Alt + ←** e **Alt + →**) voltam e avançam como no navegador, entre telas e entre as pastas do Explorador.
@@ -28,7 +35,7 @@ O HDManager mostra para onde foi o espaço do seu disco: quais pastas e arquivos
 
 ## Jogos e anti-cheat
 
-- No dia a dia, o HDManager só lê nomes, tamanhos e datas dos arquivos. O conteúdo de arquivos só é lido quando você pede: na busca de Duplicados (só nas suas pastas, nunca em jogos) e para Compactar um jogo, sempre com o jogo fechado. Ele nunca abre o processo de um jogo, não instala driver e não lê a memória de nenhum programa.
+- No dia a dia, o PCManager só lê nomes, tamanhos e datas dos arquivos. O conteúdo de arquivos só é lido quando você pede: na busca de Duplicados (só nas suas pastas, nunca em jogos) e para Compactar um jogo, sempre com o jogo fechado. Ele nunca abre o processo de um jogo, não instala driver e não lê a memória de nenhum programa.
 - Enquanto um jogo está aberto (ou um app em tela cheia), ele entra em **modo jogo**: não começa varreduras completas e quase para o modo ao vivo. A varredura pedida fica "aguardando o jogo fechar". Limpeza, Duplicados e Compactar não começam, e se já estiverem rodando, param ou pausam até o jogo fechar.
 - Antes de cada versão ser publicada, ele é validado aberto e escaneando junto com Riot Vanguard e Easy Anti-Cheat.
 
@@ -42,6 +49,7 @@ Se você tem o **Claude Code** instalado e logado neste PC, dá para tirar dúvi
 
 ## Privacidade
 
+- A Rede só lê os totais que o Windows já guarda por programa. Ela não vê sites, conteúdo nem endereços.
 - O app só se conecta à internet para verificar atualizações (no GitHub) e, se você ativar o assistente, pelo seu Claude Code.
 - Tudo o que o app grava fica em `%LOCALAPPDATA%\HDManager` (índice do disco, configurações e logs).
 
@@ -51,7 +59,7 @@ Quando sair uma versão nova aparece um aviso discreto no canto da janela. Ela s
 
 ## Desinstalar
 
-Configurações do Windows → **Aplicativos** → **HDManager** → Desinstalar. Para apagar também o índice e os logs, apague a pasta `%LOCALAPPDATA%\HDManager`.
+Configurações do Windows → **Aplicativos** → **PCManager** → Desinstalar. Para apagar também o índice e os logs, apague a pasta `%LOCALAPPDATA%\HDManager`.
 
 ## Deu problema?
 
