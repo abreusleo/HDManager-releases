@@ -86,15 +86,16 @@ O PCManager mostra o seu PC por partes, na barra da esquerda: primeiro as peças
 
 ## Assistente (opcional)
 
-Se você tem o **Claude Code** instalado e logado neste PC, dá para tirar dúvidas em linguagem natural: "como libero 50 GB?", "por que o PC esquentou na última partida?", "o que deixa o PC lento para ligar?". Ative em **Configurações → Assistente**; aparece um botão de conversa no canto inferior direito. Com uma pasta ou arquivo selecionado no Explorador, a pergunta leva os dados dele junto.
+Se você tem o **Claude Code** ou o **Codex** (da OpenAI) instalado e logado neste PC, dá para tirar dúvidas em linguagem natural: "como libero 50 GB?", "por que o PC esquentou na última partida?", "o que deixa o PC lento para ligar?". Ative em **Configurações → Assistente**; aparece um botão de conversa no canto inferior direito. Com uma pasta ou arquivo selecionado no Explorador, a pergunta leva os dados dele junto.
 
 - Logo abaixo de "Ativar assistente", em **O que o assistente pode ler**, você escolhe os blocos: Armazenamento (vem ligado), Programas, Internet, Hardware e jogos, e Windows. Ele só consulta o que estiver ligado, e cada resposta mostra **Consultou: …** com o que foi lido.
-- As perguntas e os dados dos blocos ligados (nomes, caminhos, tamanhos, programas, uso de internet, sensores e sessões) vão para a Anthropic pelo seu Claude Code, usando a sua conta. O conteúdo dos arquivos nunca é enviado, fora o bloco Arquivos dos jogos (abaixo).
+- As perguntas e os dados dos blocos ligados (nomes, caminhos, tamanhos, programas, uso de internet, sensores e sessões) vão para a Anthropic pelo seu Claude Code (ou para a OpenAI pelo seu Codex), usando a sua conta. O conteúdo dos arquivos nunca é enviado, fora o bloco Arquivos dos jogos (abaixo).
 - O assistente só lê e conversa: ele não apaga, não muda ajustes e não abre nada. O Claude Code roda sem ferramentas e sem plugins; quem lê os dados é o PCManager.
+- **Codex (em teste):** em **Quem responde**, escolha o Codex; na primeira vez, um aviso diz que os dados vão para a OpenAI. O Codex não tem um modo sem ferramentas como o Claude Code. O PCManager desliga os recursos com ação que conhece (comandos, imagens, navegador, controle do PC, plugins, apps) e confere antes de cada pergunta que nenhum outro ficou ligado; editar arquivos fica bloqueado pelo modo só leitura; e o Codex é encerrado quando avisa que vai usar uma ferramenta. Servidores MCP que uma empresa configure no PC não são desligados. Não é garantido como o Claude Code. Se a conferência achar algo desconhecido ligado, ele não roda e diz qual. Se der erro, mande o texto do erro. Para instalar: `npm install -g @openai/codex`, depois `codex` e login.
 - **Arquivos dos jogos** (vem desligado, com um aviso próprio): o assistente pode pedir os arquivos de configuração de vídeo e de jogo de VALORANT, Fortnite, Counter-Strike 2, Apex Legends, Overwatch 2, Rocket League, Rainbow Six Siege, GTA V e Minecraft, só das pastas do seu usuário (nunca da pasta onde o jogo está instalado). O PCManager só lê, com o jogo fechado, e nunca grava, renomeia ou apaga nada; nomes, contas e identificadores vão como (oculto). Como muitos jogos banem quem mexe nesses arquivos à mão, o assistente sugere mudanças pelo menu do jogo.
 - Num notebook, o bloco **Notebook** aparece em **O que o assistente pode ler**: ele consulta a bateria (com a peça Bateria ligada), os modos de energia e a placa de cada jogo.
 - Com o assistente ativo, os eventos da Manutenção, as atualizações que falharam e os dispositivos com problema têm um balão: ele abre o chat e já pergunta por que aquilo aconteceu, mandando os dados daquele item.
-- Sem o Claude Code, o assistente simplesmente não aparece.
+- Sem o Claude Code nem o Codex, o assistente simplesmente não aparece.
 
 ## Privacidade
 
